@@ -36,7 +36,7 @@
   <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
   type="application/javascript"></script>
   <script>
-    const MoodContractAddress = "0xC7ee37d264b34E070Ee4120bf0cc88800220b484"
+    const MoodContractAddress = "0x83F75e4C2fBf638174C9B5DC0D2F794c503bf30B"
     const MoodContractABI = [
         {
           "inputs": [],
@@ -69,7 +69,7 @@
     let signer;
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
     provider.send("eth_requestAccounts", []).then(() => {
-      provider.listAccounts().then(function (accounts) {
+      provider.listAccounts().then((accounts) => {
         signer = provider.getSigner(accounts[0]);
         MoodContract = new ethers.Contract(
           MoodContractAddress,
