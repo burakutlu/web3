@@ -36,38 +36,38 @@
   <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
   type="application/javascript"></script>
   <script>
-    const MoodContractAddress = "0x83F75e4C2fBf638174C9B5DC0D2F794c503bf30B"
+    const MoodContractAddress = "0xb645F67Cec74BbFC65E7e4389AC61E5A6301783E"
     const MoodContractABI = [
-        {
-          "inputs": [],
-          "name": "getMood",
-          "outputs": [
-            {
-              "internalType": "string",
-              "name": "",
-              "type": "string"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "string",
-              "name": "_mood",
-              "type": "string"
-            }
-          ],
-          "name": "setMood",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
-      ];
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "_mood",
+            "type": "string"
+          }
+        ],
+        "name": "setMood",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getMood",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
     let MoodContract;
     let signer;
-    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
     provider.send("eth_requestAccounts", []).then(() => {
       provider.listAccounts().then((accounts) => {
         signer = provider.getSigner(accounts[0]);
